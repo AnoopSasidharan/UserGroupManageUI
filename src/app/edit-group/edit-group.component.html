@@ -1,0 +1,19 @@
+<h3>Register Group</h3>>
+<form [formGroup]="groupForm" (ngSubmit)="registerGroup()">
+  <div class="mb-3 row">
+    <label for="groupName" class="col-sm-2 col-form-label">Name:</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="groupName" formControlName="Name">
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label for="groupDescription" class="col-sm-2 col-form-label">Description:</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="groupDescription" formControlName="Description">
+    </div>
+  </div>
+  <div class="row">
+    <button class="btn btn-primary" type="submit">Register</button>
+  </div>
+</form>
+

@@ -1,0 +1,17 @@
+<h3>Login User</h3>
+<form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+  <div class="mb-3 row">
+    <label for="userName" class="col-sm-2 col-form-label">User Name:</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="userName" formControlName="UserName">
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label for="password" class="col-sm-2 col-form-label">Password:</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" id="password" formControlName="Password">
+    </div>
+  </div>
+  <button class="btn btn-primary" type="submit">Login</button>
+
+</form>
