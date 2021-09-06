@@ -1,13 +1,14 @@
 name: Deploy to Azure
 on:
   push:
-    branches:
-      - master
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 env:
   AZURE_WEBAPP_NAME: usergroupmanageappui
   AZURE_WEBAPP_PACKAGE_PATH: './dist/UserGroupManageUI'    
-  NODE_VERSION: '14.0'               
+  NODE_VERSION: '14.15'               
 
 jobs:
   build-and-deploy:
@@ -26,8 +27,7 @@ jobs:
         # deploy to Azure Web App.
         npm install
         npm run build --if-present
-        npm run test --if-present
-    - name: 'Deploy to Azure WebApp'
+    - name: 'Deploy Angular App to Azure WebApp'
       uses: azure/webapps-deploy@v2
       with:
         app-name: ${{ env.AZURE_WEBAPP_NAME }}
